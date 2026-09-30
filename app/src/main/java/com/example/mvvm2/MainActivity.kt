@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     composable(NavDestination.List)
                     {
                         allUser(users, onItemClicked = {
-                            userViewModel.setUser(it.id, it.name)
+                            userViewModel.setUser(it.id, it.name, it.date)
                             navController.navigate(NavDestination.Detail)
                         })
                     }
@@ -46,8 +46,8 @@ class MainActivity : ComponentActivity() {
                             user = User(
                                 id = userViewModel.user.collectAsState().value.id,
                                 name = userViewModel.user.collectAsState().value.name,
-                                username = "username",
-                                email = "email"
+                                date = userViewModel.user.collectAsState().value.date,
+                                imageRes = userViewModel.user.collectAsState().value.imageRes,
                             )
                         )
                     }

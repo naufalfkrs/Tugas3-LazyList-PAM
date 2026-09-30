@@ -14,12 +14,12 @@ fun detail(user: User) {
     Column(modifier = Modifier.padding(50.dp)) {
         Text(text = "id =" + user.id.toString())
         Text(text = "nama = " + user.name)
-        Text(text = "email = " + user.email)
+        Text(text = "tanggal = " + user.date)
     }
 }
 
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
 fun detailPreview() {
-    detail(User(1, "name", "username", "email@email.com"))
+    detail(User(1, "nama", "tanggal", 0))
 }
